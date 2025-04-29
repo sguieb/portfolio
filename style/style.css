@@ -1,0 +1,343 @@
+/*------------------------------------------------------------------
+  Fonts
+------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Sloop';
+  src: url('fonts/Sloop-ScriptThree.ttf') format('truetype');
+}
+
+/*------------------------------------------------------------------
+  CSS Variables
+------------------------------------------------------------------*/
+:root {
+  --navbar-height: 4rem;
+}
+
+/*------------------------------------------------------------------
+  Base Reset & Body
+------------------------------------------------------------------*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+/*------------------------------------------------------------------
+  Utility: Centered Container
+------------------------------------------------------------------*/
+.container-centered {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/*------------------------------------------------------------------
+  Navbar (Desktop + Mobile)
+------------------------------------------------------------------*/
+.navbar {
+  position: sticky;
+  top: 0;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  /* align logo and links to left */
+  justify-content: flex-start;
+  padding: 0 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  z-index: 1000;
+  padding: 0 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.nav-logo img {
+  height: 50px;
+  width: auto;
+}
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: #333;
+}
+
+/* show overlay logo only when menu is active on mobile */
+@media (max-width: 600px) {
+  .nav-links.active .logo-overlay {
+    display: block;
+    width: 40px;
+    margin-bottom: 1rem;
+  }
+}
+
+/*------------------------------------------------------------------
+  Hero & Custom Logo
+------------------------------------------------------------------*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+.logo-container {
+  position: relative;
+  display: inline-block;
+}
+.logo-main {
+  font-family: 'Inter', sans-serif;
+  font-size: 4rem;
+  color: #0a0f27;
+  transform: rotate(-3deg);
+  transform-origin: left bottom;
+  margin: 0;
+}
+.logo-script {
+  font-family: 'Sloop', cursive;
+  font-size: 3rem;
+  color: #000;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%) rotate(-25deg);
+  transform-origin: left top;
+}
+
+/*------------------------------------------------------------------
+  Carousel
+------------------------------------------------------------------*/
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  justify-content: center;
+}
+.carousel img {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 0.5rem;
+}
+
+/*------------------------------------------------------------------
+  Tagline
+------------------------------------------------------------------*/
+.tagline {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/*------------------------------------------------------------------
+  Projects Section
+------------------------------------------------------------------*/
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem auto;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.project img {
+  width: 90%;
+  border-radius: 10px;
+}
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #333;
+}
+
+/*------------------------------------------------------------------
+  Mobile Overlay Menu + Responsive
+------------------------------------------------------------------*/
+@media (max-width: 600px) {
+
+ .navbar {
+    border-bottom: none;
+ }
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .nav-logo {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 150;
+  }
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;                 /* only take up top-left corner */
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+    gap: 1rem;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .nav-links.active a {
+    font-size: 1.35rem;
+    color: #000;
+  }
+  .hero {
+    padding-top: var(--navbar-height);
+    min-height: calc(100vh - var(--navbar-height));
+    gap: 1.5rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .logo-main {
+    font-size: 3rem;
+  }
+  .logo-script {
+    font-size: 2rem;
+    top: 55%;
+  }
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+  .carousel img {
+    width: 150px;
+    height: 150px;
+    scroll-snap-align: center;
+    margin: 0;
+  }
+}
+
+/*------------------------------------------------------------------
+  Desktop Override
+------------------------------------------------------------------*/
+@media (min-width: 601px) {
+  .nav-toggle {
+    display: none !important;
+  }
+  .nav-links,
+  .nav-links.active {
+    display: flex !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 0 !important;
+    gap: 2rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+  }
+}
+
+/*------------------------------------------------------------------
+  Tablet / Small Desktop
+------------------------------------------------------------------*/
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .logo-script {
+    font-size: 1.8rem;
+  }
+  .projects {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .project {
+    width: 45%;
+  }
+  .carousel img {
+    width: 45%;
+    height: auto;
+  }
+}
+
+/*------------------------------------------------------------------
+  Large Desktop
+------------------------------------------------------------------*/
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .logo-script {
+    font-size: 2.2rem;
+  }
+}
+
+/*------------------------------------------------------------------
+  Extra-Wide (1441px+)
+------------------------------------------------------------------*/
+@media (min-width: 1441px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+  .logo-script {
+    font-size: 2.5rem;
+  }
+  .container-centered {
+    max-width: 1600px;
+  }
+}
