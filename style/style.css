@@ -12,7 +12,7 @@
   CSS Variables
 ------------------------------------------------------------------*/
 :root {
-  --navbar-height: 4rem;
+  --navbar-height: 5rem;
 }
 
 /*------------------------------------------------------------------
@@ -53,21 +53,20 @@ body {
   background: #fff;
   border-bottom: 1px solid #eaeaea;
   z-index: 1000;
-  padding: 0 2rem;
-  background: #fff;
-  border-bottom: 1px solid #eaeaea;
-  z-index: 1000;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 .nav-logo img {
   height: 50px;
   width: auto;
 }
+
 .nav-toggle {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
+
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -75,6 +74,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .nav-links a {
   color: #000;
   font-size: 1rem;
@@ -82,6 +82,7 @@ body {
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .nav-links a:hover {
   color: #333;
 }
@@ -216,6 +217,7 @@ body {
     transform: translateX(-50%);
     z-index: 150;
   }
+
   .nav-links.active {
     display: flex;
     position: absolute;
@@ -225,12 +227,13 @@ body {
     background: #fff;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.5rem;
-    gap: 1rem;
+    padding: 1rem;
+    gap: 1.5rem;
     margin: 0;
     list-style: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
+
   .nav-links.active a {
     font-size: 1.35rem;
     color: #000;
