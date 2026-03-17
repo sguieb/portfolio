@@ -1,32 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger menu toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
+
+  // ── Nav toggle (mobile) ──
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks  = document.getElementById('nav-links');
+  if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      // swap icon between hamburger and close
       navToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
     });
-  
-    // Continuous auto-scrolling carousel
-    const carousel = document.getElementById('carousel');
-    const slides = Array.from(carousel.children);
-  
-    // Clone slides for seamless looping
-    slides.forEach(slide => {
-      const clone = slide.cloneNode(true);
-      carousel.appendChild(clone);
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navToggle.textContent = '☰';
+      });
     });
-  
-    let speed = 0.5; // pixels per frame
-    function continuousScroll() {
-      carousel.scrollLeft += speed;
-      // when we've scrolled past the original slides, reset
-      if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
-        carousel.scrollLeft = 0;
-      }
-      requestAnimationFrame(continuousScroll);
-    }
-    requestAnimationFrame(continuousScroll);
-  });
-  
+  }
+
+  // ── Carousel — transform-based continuous scroll ──
+  const carousel = document.getElementById('carousel');
+  if (!carousel) return;
+
+  // Clone all images for seamless loop
+  const originals = Array.from(carousel.children);
+  originals.forEach(img => carousel.appendChild(img.cloneNode(true)));
+
+  let x = 0;
+  const speed = 0.5; // px per frame
+
+  function tick() {
+    x += speed;
+    // When we've scrolled one full set, reset silently
+    const half = carousel.scrollWidth / 2;
+    if (x >= half) x -= half;
+    carousel.style.transform = `translateX(${-x}px)`;
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+});
