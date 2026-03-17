@@ -24,7 +24,7 @@
   --accent:       #c8472a;
   --navbar-h:     4.5rem;
   --font-body:    'Public Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Inter', 'Public Sans', system-ui, sans-serif;
+  --font-display: 'Public Sans', 'Inter', system-ui, sans-serif;
   --font-script:  'Sloop', 'Segoe Script', 'Brush Script MT', cursive;
 }
 
@@ -68,7 +68,7 @@ img { display: block; max-width: 100%; }
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 600;
   font-family: var(--font-display);
   color: var(--navy);
   text-decoration: none;
@@ -90,22 +90,22 @@ img { display: block; max-width: 100%; }
   Hero
 ------------------------------------------------------------------*/
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
   min-height: calc(100vh - var(--navbar-h));
+  padding: 0 4rem;
 }
 .hero-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  padding: 4rem 3.5rem 4rem 4rem;
-  border-right: 1px solid var(--warm-gray);
+  max-width: 700px;
 }
 .wordmark { position: relative; display: inline-block; width: fit-content; }
 .wordmark-main {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 5.5vw, 6rem);
+  font-size: clamp(5rem, 10vw, 10rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -114,15 +114,16 @@ img { display: block; max-width: 100%; }
 }
 .wordmark-script {
   font-family: var(--font-script);
-  font-size: clamp(2rem, 3.5vw, 3.8rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   color: var(--navy);
   position: absolute;
-  left: 52%;
-  top: 58%;
-  transform: rotate(-22deg);
+  left: 85%;
+  top: 90%;
+  transform: rotate(-18deg);
   transform-origin: left top;
   white-space: nowrap;
   pointer-events: none;
+  line-height: 1;
 }
 .hero-tagline {
   font-size: 0.95rem;
@@ -133,27 +134,8 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-body);
   max-width: 300px;
 }
-.hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.hero-right {
-  overflow: hidden;
-  position: relative;
-  min-height: calc(100vh - var(--navbar-h));
-}
-.carousel {
-  display: flex;
-  height: 100%;
-  width: max-content;
-  will-change: transform;
-}
-.carousel img {
-  height: calc(100vh - var(--navbar-h));
-  width: auto;
-  object-fit: cover;
-  filter: grayscale(100%);
-  flex-shrink: 0;
-  border-radius: 0;
-  margin: 0;
-}
+.hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
 
 /*------------------------------------------------------------------
   Buttons
@@ -316,7 +298,7 @@ section { padding: 5rem 4rem; border-top: 1px solid var(--warm-gray); }
   align-items: start;
 }
 .about-heading {
-  font-family: var(--font-script);
+  font-family: var(--font-display);
   font-size: clamp(3rem, 5vw, 5rem);
   color: var(--navy);
   line-height: 1;
@@ -357,28 +339,21 @@ section { padding: 5rem 4rem; border-top: 1px solid var(--warm-gray); }
   Contact
 ------------------------------------------------------------------*/
 .contact-section {
-  background: var(--navy);
-  color: var(--off-white);
+  background: var(--off-white);
+  color: var(--navy);
   text-align: center;
   padding: 6rem 4rem;
 }
-.contact-section .section-label { justify-content: center; color: rgba(255,255,255,0.4); }
-.contact-section .section-label::after { background: rgba(255,255,255,0.15); }
+.contact-section .section-label { justify-content: center; }
 .contact-heading {
-  font-family: var(--font-script);
+  font-family: var(--font-display);
   font-size: clamp(3.5rem, 7vw, 6rem);
-  color: var(--off-white);
+  color: var(--navy);
   line-height: 1;
   margin-bottom: 1rem;
 }
-.contact-sub { font-size: 0.95rem; color: rgba(255,255,255,0.55); margin-bottom: 2.5rem; font-weight: 300; }
+.contact-sub { font-size: 0.95rem; color: var(--mid-gray); margin-bottom: 2.5rem; font-weight: 300; }
 .contact-links { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
-.contact-section .btn-filled {
-  background: var(--off-white); color: var(--navy); border-color: var(--off-white);
-}
-.contact-section .btn-filled:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-.contact-section .btn-outline { border-color: rgba(255,255,255,0.35); color: var(--off-white); }
-.contact-section .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.6); }
 
 /*------------------------------------------------------------------
   Footer
@@ -426,8 +401,8 @@ section { padding: 5rem 4rem; border-top: 1px solid var(--warm-gray); }
   }
   .nav-links.active { display: flex; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 3rem 2rem; border-right: none; border-bottom: 1px solid var(--warm-gray); }
-  .hero-right { display: none; }
+  .hero { padding: 0 1.5rem; }
+  .hero-left { padding: 3rem 0; }
   section { padding: 3rem 1.5rem; }
   .contact-section { padding: 4rem 1.5rem; }
   .site-footer { padding: 1.5rem; }
