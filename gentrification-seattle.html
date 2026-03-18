@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gentrification &amp; Housing Trends in Seattle — Shayla Guieb</title>
+  <link rel="icon" type="image/png" href="../img/sparkle.png">
+  <link rel="stylesheet" href="../style/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/project.css">
+</head>
+<body>
+
+  <a href="#project-main" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/kitty-logo.png" alt="Shayla Guieb — home">
+    </a>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="../index.html#projects">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="project-main">
+
+    <header class="project-header">
+      <div class="project-header-inner">
+        <a href="../index.html#projects" class="back-link" aria-label="Back to all projects">← All projects</a>
+        <p class="project-header-category">GIS · Spatial Analysis · Story Map · GEOG 258</p>
+        <h1 class="project-header-title">Gentrification &amp; Housing Trends in Seattle</h1>
+        <p class="project-header-summary">A Carto story map analyzing displacement risk, rent increases, eviction rates, and income inequality across Seattle ZIP codes from 2000–2024 using five integrated spatial datasets.</p>
+        <div class="project-header-meta">
+          <div class="tags">
+            <span class="tag">ArcGIS</span>
+            <span class="tag">Carto</span>
+            <span class="tag">Spatial Analysis</span>
+            <span class="tag">Story Map</span>
+          </div>
+          <div class="project-header-links">
+            <a href="https://slides.com/shaylaguieb/deck/fullscreen#/introduction" class="btn btn-filled" target="_blank" rel="noopener noreferrer" aria-label="View live story map (opens in new tab)">View story map ↗</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="project-section" aria-labelledby="overview-heading">
+      <div class="project-content-grid">
+        <div class="project-prose">
+          <h2 id="overview-heading" class="project-section-heading">Overview</h2>
+          <p>This project explores gentrification and housing trends across Seattle through an interactive Carto story map. Using a combination of building permit data, rent levels, eviction filings, median income, and displacement risk indices, I mapped how development pressure and housing affordability vary across the city's ZIP codes.</p>
+          <p>The goal was to make spatial inequalities legible — to show not just where housing is expensive, but where rising costs are actively displacing communities, and how those patterns correlate with income and race. The story map format allowed me to guide viewers through the data sequentially, building a narrative from raw statistics toward policy implications.</p>
+        </div>
+        <aside class="project-sidebar" aria-label="Project details">
+          <dl class="project-meta-list">
+            <div class="project-meta-item">
+              <dt>Role</dt>
+              <dd>Solo GIS Analyst</dd>
+            </div>
+            <div class="project-meta-item">
+              <dt>Course</dt>
+              <dd>GEOG 258 — Digital Geographies</dd>
+            </div>
+            <div class="project-meta-item">
+              <dt>Timeline</dt>
+              <dd>Winter 2025</dd>
+            </div>
+            <div class="project-meta-item">
+              <dt>Tools</dt>
+              <dd>ArcGIS, Carto, Census data, HUD datasets, Seattle Open Data</dd>
+            </div>
+            <div class="project-meta-item">
+              <dt>Geography</dt>
+              <dd>20+ ZIP codes, City of Seattle</dd>
+            </div>
+            <div class="project-meta-item">
+              <dt>Timespan</dt>
+              <dd>2000–2024</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-section project-section--alt" aria-labelledby="data-heading">
+      <div class="project-content-wide">
+        <h2 id="data-heading" class="project-section-heading">Data &amp; Findings</h2>
+        <div class="findings-grid">
+          <div class="finding">
+            <span class="finding-stat">5+</span>
+            <p>Spatial datasets integrated: HUD, ACS Census, building permits, eviction records, and Seattle Open Data.</p>
+          </div>
+          <div class="finding">
+            <span class="finding-stat">20+</span>
+            <p>ZIP codes analyzed for displacement risk, rent levels, income, and development activity.</p>
+          </div>
+          <div class="finding">
+            <span class="finding-stat">24yr</span>
+            <p>Temporal span of data, enabling comparison of neighborhood change from 2000 through 2024.</p>
+          </div>
+        </div>
+        <div class="project-prose project-prose--padded">
+          <p>The analysis revealed clear spatial patterns of gentrification concentrated in central Seattle neighborhoods. Development activity — measured through building permits — was heavily clustered in areas already experiencing rising rents, compounding displacement pressure on existing residents. Eviction filings were highest in urban cores, spatially reinforcing the same neighborhoods facing the greatest rent increases.</p>
+          <p>A strong correlation emerged between median income and displacement risk: lower-income ZIP codes, particularly in South Seattle, showed the highest vulnerability to market-rate development. Gentrification risk was most acute in neighborhoods where active redevelopment overlapped with rent growth — a pattern the maps make visible in ways tables alone cannot.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="process-heading">
+      <div class="project-content-wide">
+        <h2 id="process-heading" class="project-section-heading">Process</h2>
+        <ol class="process-steps">
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">01</span>
+            <div>
+              <h3>Data collection &amp; sourcing</h3>
+              <p>I pulled five datasets: building permit records from Seattle Open Data, rent-level estimates from HUD Fair Market Rent data, eviction filings from county records, median household income from the ACS 5-year estimates, and a displacement risk index derived from combined socioeconomic indicators. Each dataset required individual assessment for geographic granularity and temporal coverage.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">02</span>
+            <div>
+              <h3>Data cleaning &amp; geographic alignment</h3>
+              <p>One of the core challenges was scale mismatch: building permits and rent data were available at the ZIP code level, but eviction data was only accessible at the county level. This required adjustments to the mapping approach — I used county-level eviction data as a contextual layer rather than a ZIP-level choropleth, and flagged this limitation explicitly in the story map narrative.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">03</span>
+            <div>
+              <h3>Spatial analysis in ArcGIS</h3>
+              <p>I joined each dataset to ZIP code boundary shapefiles, normalized values per capita where appropriate, and built choropleth classifications using natural breaks to avoid misleading visual distributions. Temporal comparisons were constructed by creating separate map layers for different time periods and toggling between them in the story map interface.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">04</span>
+            <div>
+              <h3>Story map construction in Carto</h3>
+              <p>I structured the narrative in Carto to move from broad context (who lives in Seattle, where development is happening) to specific findings (which neighborhoods are most at risk, where evictions and rent increases overlap). Formatting constraints in Carto's legend system required additional data cleaning to display median income values correctly.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="project-section project-section--alt" aria-labelledby="reflection-heading">
+      <div class="project-content-grid">
+        <div class="project-prose">
+          <h2 id="reflection-heading" class="project-section-heading">Reflection</h2>
+          <p>This project highlighted how much geographic scale decisions shape the story you can tell with spatial data. The mismatch between ZIP-level rent data and county-level eviction records forced me to be explicit about what the maps could and couldn't show — a discipline that I think made the final analysis more honest, if less visually clean.</p>
+          <p>The most important takeaway for me was the connection between spatial analysis and policy. These maps don't just describe where gentrification is happening — they suggest where intervention is most urgently needed. Understanding how to translate spatial findings into actionable context is something I want to develop further in future projects.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="project-nav" aria-label="Navigate between projects">
+      <a href="comfort-cuddle.html" class="project-nav-link project-nav-link--prev">
+        <span class="project-nav-dir" aria-hidden="true">←</span>
+        <span class="project-nav-label">
+          <span class="project-nav-hint">Previous project</span>
+          <span class="project-nav-title">ComfortCuddle</span>
+        </span>
+      </a>
+      <a href="../index.html#projects" class="project-nav-all">All work</a>
+      <a href="discover-rsos.html" class="project-nav-link project-nav-link--next">
+        <span class="project-nav-label">
+          <span class="project-nav-hint">Next project</span>
+          <span class="project-nav-title">Discover RSOs</span>
+        </span>
+        <span class="project-nav-dir" aria-hidden="true">→</span>
+      </a>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <img src="../img/kitty-logo.png" alt="">
+    <p>© 2026 Shayla Guieb</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
